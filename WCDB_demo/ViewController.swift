@@ -13,22 +13,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.view.backgroundColor = UIColor.white
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    
+    //MARK: - 数据库操作
     @IBAction func buttonClick(_ sender: UIButton) {
         
         switch sender.currentTitle {
         case "create":
             let result = WCDBManager.shareInstance().creatDataBase(withName: "message")
-            
             print("%@",(result == true) ? "创建数据库成功":"创建数据库失败")
-            
             break
         case "insert":
             
